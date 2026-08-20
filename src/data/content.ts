@@ -155,15 +155,6 @@ export const STATS_DATA: StatItem[] = [
     sublabelHi: "सत्यापित नागरिक समीक्षाएं",
     iconName: "Award",
   },
-  {
-    id: "response-time",
-    value: "< 15 min",
-    label: "Avg. Guidance Time",
-    labelHi: "औसत सहायता समय",
-    sublabel: "Quick First Response",
-    sublabelHi: "त्वरित प्राथमिक प्रतिक्रिया",
-    iconName: "Clock",
-  },
 ];
 
 export const REVIEWS_DATA: ReviewItem[] = [

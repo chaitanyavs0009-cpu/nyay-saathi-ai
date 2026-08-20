@@ -4,10 +4,10 @@ import { Language } from '../types';
 
 interface FeaturesSectionProps {
   language: Language;
-  onActionClick: (action: string, title?: string) => void;
+  onActionClick?: (action: string, title?: string) => void;
 }
 
-export function FeaturesSection({ language, onActionClick }: FeaturesSectionProps) {
+export function FeaturesSection({ language }: FeaturesSectionProps) {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Bot':
@@ -51,20 +51,19 @@ export function FeaturesSection({ language, onActionClick }: FeaturesSectionProp
             <div
               key={feature.id}
               id={`feature-card-${feature.id}`}
-              onClick={() => onActionClick(feature.id, language === 'en' ? feature.title : feature.titleHi)}
-              className="bg-white rounded-2xl p-6 sm:p-7 border border-sky-100 shadow-2xs hover:shadow-lg hover:shadow-sky-500/10 hover:border-sky-300 transition-all duration-200 cursor-pointer flex flex-col justify-between group"
+              className="bg-white rounded-2xl p-6 sm:p-7 border border-sky-100 shadow-2xs flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-sky-50 group-hover:bg-sky-100/80 flex items-center justify-center transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-sky-50 flex items-center justify-center">
                     {getIcon(feature.iconName)}
                   </div>
-                  <span className="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 group-hover:bg-sky-100 group-hover:text-sky-800 transition-colors">
+                  <span className="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">
                     {language === 'en' ? feature.tag : feature.tagHi}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-sky-600 transition-colors mb-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">
                   {language === 'en' ? feature.title : feature.titleHi}
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -72,9 +71,9 @@ export function FeaturesSection({ language, onActionClick }: FeaturesSectionProp
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-sky-100/70 flex items-center justify-between text-xs font-semibold text-sky-600 group-hover:text-sky-700">
-                <span>{language === 'en' ? 'Click to explore' : 'विवरण देखें'}</span>
-                <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <div className="mt-6 pt-4 border-t border-sky-100/70 flex items-center justify-between text-xs font-semibold text-sky-600">
+                <span>{language === 'en' ? 'Core Feature' : 'प्रमुख सुविधा'}</span>
+                <ArrowUpRight className="w-4 h-4 text-sky-400" />
               </div>
             </div>
           ))}

@@ -1,4 +1,4 @@
-import { Briefcase, MessageSquare, CheckCircle2, Award, Clock } from 'lucide-react';
+import { Briefcase, MessageSquare, CheckCircle2, Award } from 'lucide-react';
 import { STATS_DATA } from '../data/content';
 import { Language } from '../types';
 
@@ -17,8 +17,6 @@ export function StatsSection({ language }: StatsSectionProps) {
         return <CheckCircle2 className="w-5 h-5 text-emerald-600" />;
       case 'Award':
         return <Award className="w-5 h-5 text-amber-500" />;
-      case 'Clock':
-        return <Clock className="w-5 h-5 text-cyan-600" />;
       default:
         return <CheckCircle2 className="w-5 h-5 text-sky-600" />;
     }
@@ -43,7 +41,7 @@ export function StatsSection({ language }: StatsSectionProps) {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {STATS_DATA.map((stat) => (
             <div
               key={stat.id}
